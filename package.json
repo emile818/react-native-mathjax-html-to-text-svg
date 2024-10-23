@@ -1,10 +1,10 @@
 {
-  "name": "react-native-mathjax-html-to-text-svg",
+  "name": "react-native-mathjax-html-to-text-svg-regexfix",
   "version": "1.0.21",
   "description": "An essential React Native component for rendering mathematical expressions in HTML using the power of MathJax. Harness the capabilities of MathJax effortlessly. Supercharge your app with effortless MathJax functionality, all without the need for react-native-webview.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vis-cognitionis/react-native-mathjax-html-to-text-svg.git"
+    "url": "git+ssh://git@github.com/vis-cognitionis/react-native-mathjax-html-to-text-svg.git"
   },
   "main": "index.js",
   "keywords": [
@@ -23,7 +23,7 @@
   ],
   "author": "Vis Cognitionis <omeralemdar94@gmail.com> (https://github.com/vis-cognitionis)",
   "bugs": {
-    "url": "https://github.com/vis-cognitionis/react-native-mathjax-html-to-text-svg"
+    "url": "https://github.com/emile818/react-native-mathjax-html-to-text-svg"
   },
   "packageManager": "yarn@v1.22.19",
   "engines": {
@@ -33,6 +33,9 @@
     "html-entities": "^2.4.0",
     "mhchemparser": "^4.2.1"
   },
-  "homepage": "https://github.com/vis-cognitionis/react-native-mathjax-html-to-text-svg",
-  "license": "MIT"
+  "homepage": "https://github.com/emile818/react-native-mathjax-html-to-text-svg",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

@@ -173,8 +173,8 @@ const GenerateTextComponent = ({
     .join("\n") // join the lines back together
     .replace(/\\/g, "") // remove backslashes ('\')
     .replace(
-      /(?<!\S)\*\*(?!\S)|(?<!\S)[*:]+(?!\S)|(?<!\S)\*\*[^\S\n]*\*\*(?!\S)|\|\s*([a-zA-Z0-9]+\))/g,
-      "$1"
+      /^(\*\*|[:*]+|[^\S\n]*\*\*)$|^\| ?([a-zA-Z0-9]+)\)|([:*]+|[^\S\n]*\*\*) ?$/g,
+      "$2"
     ) // remove single punctuation marks
     .replace(/^\s*[\p{P}\p{S}]\s*[\p{P}\p{S}]\s*$/gmu, "") // remove specific patterns like ): or ).
     .replace(/-{2,}/g, "") // remove standalone triple dashes
@@ -344,8 +344,7 @@ const GenerateTextComponent = ({
             return <Text key={`part-${index}-${partIndex}`}>{part}</Text>;
           });
 
-          const regex =
-            /^(?:[A-Za-z]+[):,]|[IVXLCDM]+[.:,]|[0-9]+[):,]|.*(?<!^)[,:)](?=\s|$))\s*/gm;
+          const regex = /^(?:[A-Za-z]+[):,]|[IVXLCDM]+[.:,]|[0-9]+[):,]|.*[,:)](?=\s|$))\s*/gm;
           const result = regex.test(text);
 
           formattedComponents.push(
